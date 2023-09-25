@@ -8,6 +8,7 @@ import {
   LeftFooterContainer,
   NoteContainer,
   NoteHeader,
+  PaintIconContainer,
 } from './styles'
 import { useState } from 'react'
 
@@ -28,7 +29,9 @@ export default function Note() {
       <footer>
         <LeftFooterContainer>
           <img src={Pencil} alt="Pencil" />
-          <img src={Paint} alt="Paint" onClick={toggleShowColors} />
+          <PaintIconContainer colorsBeingDisplayed={showColors}>
+            <img src={Paint} alt="Paint" onClick={toggleShowColors} />
+          </PaintIconContainer>
         </LeftFooterContainer>
         {showColors && (
           <ColorsContainer>

@@ -82,6 +82,24 @@ export const LeftFooterContainer = styled.div`
   gap: 0.7rem;
 `
 
+interface PaintIconContainerProps {
+  colorsBeingDisplayed: boolean
+}
+
+export const PaintIconContainer = styled.div<PaintIconContainerProps>`
+  width: 1.8rem;
+  height: 1.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${(props) =>
+    props.colorsBeingDisplayed ? '#FFE3B3' : 'transparent'};
+
+  border-radius: 999px;
+`
+
 export const ColorsContainer = styled.div`
   position: absolute;
 

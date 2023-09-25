@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const NotesContainer = styled.main`
   margin-top: 1rem;
+  margin-bottom: 4rem;
   padding: 0 6rem;
 
   h2 {

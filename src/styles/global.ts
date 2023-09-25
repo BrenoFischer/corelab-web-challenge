@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { devices } from './mixins'
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -9,6 +10,18 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         font-size: 100%;
+
+        @media ${devices.tablet} {
+            font-size: 90%;
+        }
+
+        @media ${devices.phone} {
+            font-size: 70%;
+        }
+
+        @media ${devices.desktop} {
+            font-size: 95%;
+        }
     }
 
     body {

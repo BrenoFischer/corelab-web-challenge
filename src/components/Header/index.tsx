@@ -22,9 +22,7 @@ export default function Header() {
         </SearchBarContainer>
       </LeftHeaderContainer>
 
-      <div>
-        <img src={ExitIcon} alt="Exit letter" />
-      </div>
+      <img src={ExitIcon} alt="Exit letter" />
     </HeaderContainer>
   )
 }

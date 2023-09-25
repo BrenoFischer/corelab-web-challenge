@@ -6,6 +6,8 @@ export const HeaderContainer = styled.header`
   padding-left: 2.24rem;
   padding-right: 1.61rem;
 
+  gap: 3rem;
+
   width: 100%;
   height: 3.5625rem;
 

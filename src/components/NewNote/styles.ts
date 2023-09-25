@@ -21,7 +21,7 @@ export const NewNoteContainer = styled.div`
     }
 
     textarea {
-      padding: 0.8rem;
+      padding: 1.2rem;
 
       width: 100%;
 
@@ -45,14 +45,13 @@ export const FormHeader = styled.header`
 
   width: 100%;
   padding-right: 0.56rem;
+  padding: 1.2rem 1.4rem 0.8rem;
 
   border-bottom: 1px solid ${(props) => props.theme.borderGray};
 
   input {
     border: none;
     width: 100%;
-
-    padding: 0.8rem;
 
     background-color: transparent;
 

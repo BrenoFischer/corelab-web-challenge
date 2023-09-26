@@ -11,6 +11,8 @@ export const NewNoteContainer = styled.div`
   form {
     width: 33.13538rem;
 
+    position: relative;
+
     border-radius: 0.1875rem;
     border: 1px solid ${(props) => props.theme.borderGray};
     background: ${(props) => props.theme.white};
@@ -28,6 +30,7 @@ export const NewNoteContainer = styled.div`
       border: none;
       outline: none;
       resize: none;
+      overflow: hidden;
 
       background-color: transparent;
 
@@ -75,4 +78,16 @@ export const FormHeader = styled.header`
   img {
     cursor: pointer;
   }
+`
+
+interface ConfirmButtonContainerProps {
+  buttonDisabled: boolean
+}
+
+export const ConfirmButtonContainer = styled.div<ConfirmButtonContainerProps>`
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1.2rem;
+
+  cursor: ${(props) => (props.buttonDisabled ? 'not-allowed' : 'pointer')};
 `

@@ -34,6 +34,7 @@ export const NoteContainer = styled.li`
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     padding: 0 1.4rem 0.7rem;
 
@@ -154,4 +155,11 @@ export const Color = styled.li<ColorProps>`
   list-style: none;
 
   background-color: ${(props) => props.theme[COLORS[props.color]]};
+`
+
+export const DeleteButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  height: 100%;
 `

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 import { NoteType } from '../../types/NoteType'
 
@@ -11,19 +11,26 @@ import Delete from '../../assets/exit.svg'
 import {
   Color,
   ColorsContainer,
+  DeleteButtonContainer,
   IconContainer,
   LeftFooterContainer,
   NoteContainer,
   NoteHeader,
 } from './styles'
+import NotesAPI from '../../api/services/NotesAPI'
+import { NotesContext } from '../../contexts/NotesContext'
+import LoadingSpinner from '../../utils/LoadingSpinner'
 
 interface NoteProps {
   note: NoteType
 }
 
 export default function Note({ note }: NoteProps) {
+  const { getNotes } = useContext(NotesContext)
+
   const [showColors, setShowColors] = useState(false)
   const [editNote, setEditNote] = useState(false)
+  const [deletingNote, setDeletingNote] = useState(false)
   const [titleInputValue, setTitleInputValue] = useState(note.title)
   const [bodyInputValue, setBodyInputValue] = useState(note.body)
 
@@ -33,6 +40,14 @@ export default function Note({ note }: NoteProps) {
 
   function toggleEditNote() {
     setEditNote((editState) => !editState)
+  }
+
+  async function handleDeleteNote() {
+    setDeletingNote(true)
+    await NotesAPI.delete({ id: note.id }).then((_) => {
+      getNotes()
+      setDeletingNote(false)
+    })
   }
 
   return (
@@ -79,7 +94,13 @@ export default function Note({ note }: NoteProps) {
               <Color color={'brown'} />
             </ColorsContainer>
           )}
-          <img src={Delete} alt="Exit symbol" />
+          <DeleteButtonContainer>
+            {deletingNote ? (
+              <LoadingSpinner />
+            ) : (
+              <img src={Delete} alt="Exit symbol" onClick={handleDeleteNote} />
+            )}
+          </DeleteButtonContainer>
         </footer>
       </form>
     </NoteContainer>

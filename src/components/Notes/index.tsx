@@ -8,12 +8,16 @@ export default function Notes() {
 
   return (
     <NotesContainer>
-      <h2>Outras</h2>
-      <ul>
-        {notes.map((note) => {
-          return <Note key={note.title} note={note} />
-        })}
-      </ul>
+      {notes.length > 0 && (
+        <>
+          <h2>Outras</h2>
+          <ul>
+            {notes.map((note) => {
+              return <Note key={note.title} note={note} />
+            })}
+          </ul>
+        </>
+      )}
     </NotesContainer>
   )
 }

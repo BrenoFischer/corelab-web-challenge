@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { devices } from '../../styles/mixins'
 
 interface NoteContainerProps {
   backgroundColor: string
 }
 
-export const NoteContainer = styled.li<NoteContainerProps>`
+export const NoteContainer = styled(motion.li)<NoteContainerProps>`
   width: 100%;
   max-width: 24.375rem;
 
@@ -101,11 +102,12 @@ export const IconContainer = styled.div<IconContainerProps>`
 
   background-color: ${(props) =>
     props.iconPressed ? '#FFE3B3' : 'transparent'};
+  z-index: 9999;
 
   border-radius: 999px;
 `
 
-export const ColorsContainer = styled.div`
+export const ColorsContainer = styled(motion.div)`
   position: absolute;
 
   bottom: -2.5rem;

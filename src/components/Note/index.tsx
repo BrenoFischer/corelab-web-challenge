@@ -100,7 +100,12 @@ export default function Note({ note }: NoteProps) {
   }
 
   return (
-    <NoteContainer backgroundColor={note.color}>
+    <NoteContainer
+      backgroundColor={note.color}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'linear', duration: 0.5 }}
+    >
       <form onSubmit={handleEditNote}>
         <NoteHeader>
           <input
@@ -129,7 +134,7 @@ export default function Note({ note }: NoteProps) {
             </IconContainer>
           </LeftFooterContainer>
           {showColors && (
-            <ColorsContainer>
+            <ColorsContainer initial={{ y: '-30%' }} animate={{ y: 0 }}>
               <Color
                 color={'lightBlue'}
                 onClick={() => handleEditColor('lightBlue')}

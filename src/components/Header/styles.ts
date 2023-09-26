@@ -39,7 +39,7 @@ export const LogoContainer = styled.div`
   }
 `
 
-export const SearchBarContainer = styled.div`
+export const SearchBarForm = styled.form`
   display: flex;
   align-items: center;
 
@@ -68,6 +68,13 @@ export const SearchBarContainer = styled.div`
     &:focus {
       outline: none;
     }
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
   }
 
   img {

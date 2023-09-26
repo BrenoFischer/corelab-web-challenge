@@ -5,6 +5,7 @@ import NotesAPI from '../api/services/NotesAPI'
 interface NotesContextType {
   notes: NoteType[]
   getNotes: () => void
+  filterNotes: (filter: string) => void
 }
 
 export const NotesContext = createContext({} as NotesContextType)
@@ -27,12 +28,26 @@ export function NotesContextProvider({ children }: NotesContextProviderProps) {
     }
   }
 
+  async function filterNotes(filter: string) {
+    const filterLowerCase = filter.toLowerCase()
+    const newNotes: NoteType[] = await NotesAPI.list()
+
+    const filteredNotes = newNotes.filter((note) => {
+      return (
+        note.title.toLowerCase().includes(filterLowerCase) ||
+        note.body.toLowerCase().includes(filterLowerCase)
+      )
+    })
+
+    setNotes(filteredNotes)
+  }
+
   useEffect(() => {
     getNotes()
   }, [])
 
   return (
-    <NotesContext.Provider value={{ notes, getNotes }}>
+    <NotesContext.Provider value={{ notes, getNotes, filterNotes }}>
       {children}
     </NotesContext.Provider>
   )

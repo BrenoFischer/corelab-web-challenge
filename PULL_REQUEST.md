@@ -58,3 +58,5 @@ PT:
 
 - <b>styled-compoents</b>: ferramenta para auxiliar na estilização de componentes, permitindo escrever código CSS dentro de arquivos JS (ou TS).
 
+- <b>axios</b>: auxilia na criação de um HTTP client.
+

@@ -82,11 +82,11 @@ export const LeftFooterContainer = styled.div`
   gap: 0.7rem;
 `
 
-interface PaintIconContainerProps {
-  colorsBeingDisplayed: boolean
+interface IconContainerProps {
+  iconPressed: boolean
 }
 
-export const PaintIconContainer = styled.div<PaintIconContainerProps>`
+export const IconContainer = styled.div<IconContainerProps>`
   width: 1.8rem;
   height: 1.8rem;
 
@@ -95,7 +95,7 @@ export const PaintIconContainer = styled.div<PaintIconContainerProps>`
   justify-content: center;
 
   background-color: ${(props) =>
-    props.colorsBeingDisplayed ? '#FFE3B3' : 'transparent'};
+    props.iconPressed ? '#FFE3B3' : 'transparent'};
 
   border-radius: 999px;
 `

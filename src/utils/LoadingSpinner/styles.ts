@@ -11,10 +11,10 @@ export const LoadingSpinnerContainer = styled.div`
   }
 
   > div {
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 0.4rem solid ${(props) => props.theme.darkGray};
-    border-top: 0.4rem solid ${(props) => props.theme.gray};
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 0.2rem solid ${(props) => props.theme.darkGray};
+    border-top: 0.2rem solid ${(props) => props.theme.gray};
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
   }

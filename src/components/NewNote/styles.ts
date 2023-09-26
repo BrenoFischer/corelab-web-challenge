@@ -80,14 +80,8 @@ export const FormHeader = styled.header`
   }
 `
 
-interface ConfirmButtonContainerProps {
-  buttonDisabled: boolean
-}
-
-export const ConfirmButtonContainer = styled.div<ConfirmButtonContainerProps>`
+export const ConfirmButtonWrapper = styled.div`
   position: absolute;
   bottom: 0.5rem;
   right: 1.2rem;
-
-  cursor: ${(props) => (props.buttonDisabled ? 'not-allowed' : 'pointer')};
 `

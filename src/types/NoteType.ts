@@ -3,4 +3,5 @@ export interface NoteType {
   title: string
   body: string
   favourite: boolean
+  color: string
 }

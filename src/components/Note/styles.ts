@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 import { devices } from '../../styles/mixins'
 
-export const NoteContainer = styled.li`
+interface NoteContainerProps {
+  backgroundColor: string
+}
+
+export const NoteContainer = styled.li<NoteContainerProps>`
   width: 100%;
   max-width: 24.375rem;
 
@@ -12,7 +16,7 @@ export const NoteContainer = styled.li`
   list-style: none;
 
   border-radius: 1.5625rem;
-  background: ${(props) => props.theme.white};
+  background: ${(props) => props.theme[props.backgroundColor]};
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
 
   textarea {
@@ -155,6 +159,11 @@ export const Color = styled.li<ColorProps>`
   list-style: none;
 
   background-color: ${(props) => props.theme[COLORS[props.color]]};
+`
+
+export const RightFooterContainer = styled.div`
+  display: flex;
+  gap: 1rem;
 `
 
 export const DeleteButtonContainer = styled.div`

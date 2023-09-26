@@ -1,13 +1,13 @@
 import { useState, useContext } from 'react'
 
-import { GiConfirmed } from 'react-icons/gi'
 import Star from '../../assets/star.svg'
 import FilledStar from '../../assets/filledStar.svg'
 
-import { ConfirmButtonContainer, FormHeader, NewNoteContainer } from './styles'
+import { ConfirmButtonWrapper, FormHeader, NewNoteContainer } from './styles'
 import NotesAPI from '../../api/services/NotesAPI'
-import { IconContext } from 'react-icons'
+
 import { NotesContext } from '../../contexts/NotesContext'
+import ConfirmButton from '../../utils/ConfirmButton'
 
 export default function NewNote() {
   const { getNotes } = useContext(NotesContext)
@@ -25,7 +25,7 @@ export default function NewNote() {
     e.preventDefault()
 
     if (!isFormInvalid) {
-      const response = await NotesAPI.create({
+      await NotesAPI.create({
         title: titleInputValue,
         body: bodyInputValue,
         favourite,
@@ -34,7 +34,6 @@ export default function NewNote() {
       setTitleInputValue('')
       setBodyInputValue('')
 
-      console.log(response)
       getNotes()
     }
   }
@@ -65,16 +64,9 @@ export default function NewNote() {
             setBodyInputValue(event.target.value)
           }}
         />
-        <ConfirmButtonContainer
-          buttonDisabled={isFormInvalid}
-          onClick={handleCreateNewNote}
-        >
-          <IconContext.Provider
-            value={{ color: isFormInvalid ? '#F0F0FF' : '#333' }}
-          >
-            <GiConfirmed size={25} />
-          </IconContext.Provider>
-        </ConfirmButtonContainer>
+        <ConfirmButtonWrapper>
+          <ConfirmButton buttonDisabled={isFormInvalid} />
+        </ConfirmButtonWrapper>
       </form>
     </NewNoteContainer>
   )

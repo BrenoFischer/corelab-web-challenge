@@ -18,4 +18,8 @@ export const NotesContainer = styled.main`
     flex-wrap: wrap;
     gap: 2rem;
   }
+
+  > div {
+    margin-top: 1.88rem;
+  }
 `

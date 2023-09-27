@@ -60,3 +60,65 @@ PT:
 
 - <b>axios</b>: auxilia na criação de um HTTP client.
 
+- <b>framer-motion</b>: criação de animações para ambiente React, incluindo animações com mudanças de estado de um componente
+
+EN: 
+- <b>react ^18.1.0</b> (mandatory tool)
+
+- <b>NPM ^8.5.5</b>: as the package manager.
+
+- <b>eslint</b>: used for development to assist in code standardization based on pre-configured rules.
+    - <b>@rocketseat/eslint-config</b>: set of rules for eslint - note that the "end of line" rule was modified.
+
+- <b>styled-components</b>: tool to assist in styling components, allowing you to write CSS code within JS (or TS) files.
+
+- <b>axios</b>: helps in creating an HTTP client.
+
+- <b>framer-motion</b>: used for creating animations in a React environment, including animations with state changes of a component.
+
+### Estrutura de pastas / Folder's structure
+PT:
+.
+├── public                  # Contém o arquivo raiz (index.html), além de ser local para importar fontes
+├── src                     # Arquivos fonte
+|   ├── @types
+|   ├── api
+|   |   ├── configs         # Arquivos de configuração do axios, como URL base para as requisições
+|   |   └── services        # Utiliza o axios para fazer requisições com o banco de dados
+|   ├── assets              # Imagens e ícones utilizados no projeto                  
+|   ├── components
+|   |   ├── Header          
+|   |   ├── NewNote         
+|   |   ├── Note            
+|   |   └── Notes                                  
+|   ├── contexts            # Responsável por controlar o estado global da aplicação, guardando a lista de Notes
+|   ├── styles              # Estilos globais e mixins (funções) para estilo responsivo
+|   ├── types               # Tipos globais, como NoteType
+|   ├── utils  
+|   ├── App.tsx             
+|   └── index.tsx           # Utiliza React para renderizar a aplicação. Inicializa Contextos e estilização global
+├── package.json          
+└── README.md
+
+EN:
+.
+├── public                  # It contains the root file (index.html), in addition to being a place to import fonts
+├── src                     # Source files
+|   ├── @types
+|   ├── api
+|   |   ├── configs         # axios configuration files, as base URL for requests
+|   |   └── services        # Use axios to make database requests
+|   ├── assets              # Images and Icons used on project                
+|   ├── components
+|   |   ├── Header          
+|   |   ├── NewNote         
+|   |   ├── Note            
+|   |   └── Notes                                
+|   ├── contexts            # Responsible for controlling the global state of the application, storing the list of Notes
+|   ├── styles              # Global styles and mixins (functions) for responsive style
+|   ├── types               # Global types, as NoteType
+|   ├── utils  
+|   ├── App.tsx             
+|   └── index.tsx           # Use React to render the app. Initialize Contexts
+├── package.json          
+└── README.md

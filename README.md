@@ -4,7 +4,7 @@ PT: O projeto foi realizado de acordo com as regras do desafio. Para fins de tes
 
 Para informações detalhadas, por favor leia o arquivo PULL_REQUEST.md
 
-O front-end está disponível em produção no link: 
+O front-end está disponível em produção no link: https://corelab-breno-perricone.netlify.app/
 
 O back-end está disponível em produção com a url: https://corelab-api-spiz.onrender.com
 
@@ -18,7 +18,7 @@ EN: The project was carried out according to the challenge rules. For practical 
 
 For detailed information, please read the PULL_REQUEST.md file.
 
-The front-end is available in production at the link: 
+The front-end is available in production at the link: https://corelab-breno-perricone.netlify.app/
 
 The back-end is available in production at the URL: https://corelab-api-spiz.onrender.com
 

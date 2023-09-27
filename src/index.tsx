@@ -8,6 +8,7 @@ import { defaultTheme } from './styles/themes/default'
 import { NotesContextProvider } from './contexts/NotesContext'
 import { GlobalStyle } from './styles/global'
 
+// eslint-disable-next-line
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>

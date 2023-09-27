@@ -47,6 +47,7 @@ export default function Note({ note }: NoteProps) {
 
   async function handleDeleteNote() {
     setDeletingNote(true)
+    // eslint-disable-next-line
     await NotesAPI.delete({ id: note.id }).then((_) => {
       getNotes()
       setDeletingNote(false)
